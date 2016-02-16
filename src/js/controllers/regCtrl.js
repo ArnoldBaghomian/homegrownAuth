@@ -2,22 +2,20 @@
 
 var app = angular.module('someApp');
 
-app.controller('regCtrl', ["$scope","$log", "$http", function($scope, $log, $http) {
-  $scope.regClick = function(){
+app.controller('regCtrl', ["$scope", "$http", function($scope, $http) {
+  $scope.regAdd = function(){
 
-    var email = $scope.regEmail
+    var email = $scope.email1
     // var username= $scope.regUser
     // var image= $scope.regImage
     // console.log("image", image)
 
-    if ($scope.regPass !==  $scope.regPass2){
+    if ($scope.pass1 !==  $scope.pass2){
       return swal("Sorry, Passwords do not match ")
-      $log.warn(" no good")
     }
     else{
-      var password = $scope.regPass
+      var password = $scope.pass1
       swal('Registration Completed')
-      $log.info('thank you')
       
     }
     console.log("email:", email, "password:", password)
